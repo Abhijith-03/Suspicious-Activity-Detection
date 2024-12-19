@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Processed Video</title>
+</head>
+<body>
+    <h1>Processed Video</h1>
+    <p>Your video has been processed successfully. You can download or view it below:</p>
+    <video width="640" height="480" controls>
+        <source src="{{ url_for('get_output_file', filename=filename) }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <br>
+    <a href="{{ url_for('get_output_file', filename=filename) }}" download>Download Processed Video</a>
+    <br>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>

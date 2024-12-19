@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suspicious Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-container {
+            display: flex;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 900px;
+            justify-content: center;
+        }
+
+        .section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            text-align: center;
+        }
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="file"] {
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>DETECT THE SUSPICIOUS THINGS!!</h1>
+    <div class="form-container">
+        <div class="section">
+            <h2>Test with an Image</h2>
+            <form action="/upload-image" method="POST" enctype="multipart/form-data">
+                <label for="image">Select Image:</label>
+                <input type="file" name="image" accept="image/*" required>
+                <button type="submit">Upload Image</button>
+            </form>
+        </div>
+        <div class="section">
+            <h2>Test with a Video</h2>
+            <form action="/upload-video" method="POST" enctype="multipart/form-data">
+                <label for="video">Select Video:</label>
+                <input type="file" name="video" accept="video/*" required>
+                <button type="submit">Upload Video</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
